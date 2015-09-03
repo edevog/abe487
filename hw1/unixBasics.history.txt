@@ -1,0 +1,242 @@
+git clone https://github.com/edevog/test.git
+ls
+cd test/
+ls
+touch foo
+ls
+git add foo
+git commit -am foo
+git config --global user.name "elizabeth de vogelaere"
+git config --global user.email "edevog@email.arizona.edu"
+git commit -am foo
+git push
+cwd
+ls
+#ls
+%ls
+ls
+ls ~
+ls -a
+ls-A
+cd<users>
+-F
+ls -F
+ls -aF
+pwd
+%Full path to home directory is /home/u15/edevog
+~/u15 cd/
+(~) 57% cd /
+pwd
+cd ~/docs/
+cd /home/
+cd ~/u15/
+cd ~/edevog/
+pwd
+cd~/edevog
+cd /home/u15/edevog
+pwd
+cd ~/u15/
+cd /home/u15
+pwd
+cd ~/edevog/
+cd /home/
+cd ~/u15/
+pwd
+ls -F
+cd /home/users
+cd /home/users/
+pwd
+cd /home/u15/
+ls
+ls -F
+cd /home/
+ls -F
+ls -aF
+cd /home/u12/
+ls -F
+cd /home/u12/aagwai
+ls
+ls -F
+cd /home/u15
+ls -F
+ls -aF
+wc <big_file.fasta
+wc <sequences.fasta
+cd /home/u15/edevog
+mv <sequence.fata
+ls-aF
+ls -aF
+ls -F
+ls -bF
+ls -BF
+mkdir fasta
+ls -F
+ls
+wc <sequences.fasta
+/home/u15/edevog/test
+ls
+cd /home/u15/edevog/fasta
+ls -F
+ls -aF
+cd /home/
+ls
+cd /home/u18
+ls
+cd /home/pbsworks/
+/home/u29/
+ls
+cd /home/u29/
+ls
+cwd
+pwd
+/home/
+cd /home/
+ls -aF
+cd /home/.numpy-site.cfg
+cw<.numpy-site.cfg
+wc<.numpy-site.cfg
+cd /home/u15/edevog/test
+ls -aF
+cd /home/u15/edevog
+ls
+ls -aF
+cd /home/u15/edevog/test/.ssh
+cd /home/u15/edevog/test/.ssh/
+cd /home/u15/edevog/test/.gnome2/
+cd /home/u15/edevog/test
+cd ~/.gnome2/
+ls -aF
+ls
+PS1
+cd
+pwd
+cd ~/.ssh/
+ls
+ls -aF
+.bashrc
+bash.rc
+cd ../
+pwd
+cd ./src/
+cd
+cd ./src/
+cd home/u15
+pwd
+~/test/
+cd
+mkdir abe487
+ls
+rmdir test
+~/test
+cd ~/test
+ls
+rm -r test
+cd
+ls
+rm -r test
+cd
+ls
+w
+wc c
+wc w
+w | wc
+w | wc -l
+cd
+ls
+ls -aF
+~/fasta/
+cd ~/fasta/
+ls
+ls -aF
+..
+/..
+cd ..
+ls
+ls -aF
+ls -lh
+md5sum*
+date
+cd /home/
+ls
+cd /home/u15/edevog
+ls
+sequences.fasta
+ls /rsgrps/bhurwitz/hurwitzlab/abe487/cuffdiff.txt
+ls
+cd /rsgrps/bhurwitz/hurwitzlab/abe487/cuffdiff.txt
+ls
+cp /tmp/cuffdiff.txt
+echo "# ABE-487" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/edevog/ABE-487.git
+git push -u origin master
+git commit
+git add <sequence.fasta>
+fukkkkkk
+git commit .ssh
+cd
+ls
+cd
+ls -aF
+ssh-keygen
+cd~/.ssh
+cd ~/.ssh
+cat id_rsa.pub
+ls -aF
+cat id_rsa.pub
+~/.ssh/config
+nano
+wc sequences.fasta
+nano
+wc sequences.fasta 
+man head
+head -n1
+man head
+head -n1 sequences.fasta 
+man head
+tail -n1 sequences.fasta 
+man grep
+grep -c ATGGCGTCTTGGCCTTAAAAGCTC
+man grep
+grep -c ATGGCGTCTTGGCCTTAAAAGCTC sequences.fasta 
+ls
+man mv
+mv -T sequences.fasta moreinformative.fasta
+ls
+man cp
+cp -T moreinformative.fasta fasta
+man cp
+cp -T moreinformative.fasta fasta
+man cp
+cp -t moreinformative.fasta fasta
+cp -T moreinformative.fasta fasta/
+-t fasta/ moreinformative.fasta 
+cp -t fasta/ moreinformative.fasta 
+cd ~/fasta/
+ls
+!
+cd !
+/!
+cd
+ls
+pwd
+rm moreinformative.fasta 
+ls
+man cp
+man rm
+man history
+man ls
+man print
+history
+man history
+history -p
+ls
+man history -p
+man history
+man man
+~/.bash_history
+ls
+ls -aF
+~/.bash_history
