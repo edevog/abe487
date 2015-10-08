@@ -3,30 +3,20 @@
 use warnings;
 use strict;
 use feature "say";
-
-unless(@ARGV==2){
-    die "Please provide 2 sequences.\n";
+if (scalar (@ARGV) != 2) {
+    die "Please provide two sequences.\n";
 }
-__END__
-for my $seq (@ARGV){
-    say "-------";
-    say "Seq :$seq";
-    my $length = length($seq);
-    say "Length: $length";
-
-    #in the brackets (anyting that matches those letters not necessarily in that 
-    #order)the slashes define that a character class is occuring?
-
-    my $gc= scalar( grep { /[GC]/ } split('', uc $seq));# character class  
-    say "#GC : $gc";  
-    my $pergc=$gc/$length*100;
-    say "%GC : $pergc";
+my ($seq1, $seq2) = @ARGV;
+if (length($seq1) ne length($seq2)) {
+    die "Please ensure the sequences are the same length.";
 }
-
-__END__
-my @seq=qw(@ARGV);
-my $seq =split(" ",$seq);
-say "$seq";
-say "Seq :@ARGV";
-
-say "Length :", scalar(@ARGV);
+my $num_snps;
+for (my $i=0; $i<length($seq1); $i++){
+    my $s1 = substr $seq1, $i, 1;
+    my $s2 = substr $seq2, $i, 1;
+    if ($s1 ne $s2) {
+        $num_snps++;
+        say "Pos:", $i + 1," ", $s1, "=>", $s2;
+    }
+}
+say "Found $num_snps SNPs.";
