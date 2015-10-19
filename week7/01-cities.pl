@@ -1,6 +1,5 @@
 #!/bin/perl
 #01-cities.pl
-#
 
 use warnings;
 use strict;
@@ -29,3 +28,13 @@ foreach my $city (sort {$a cmp $b} keys %places){
     print "$count: $city, $state\n";
 }
 __END__
+
+#"All at once":
+
+my %hash = (
+   "Mountain View" => 'California',
+            Tucson => 'Arizona',
+          Ballymun => 'Dublin',
+);
+
+say Dumper(\%hash);
