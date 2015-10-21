@@ -1,7 +1,5 @@
 #!/usr/bin/perl
-
 #02-nobody.pl
-
 use strict;
 use warnings;
 use autodie;
@@ -10,12 +8,17 @@ use feature "say";
 my $name = shift || "George";
 
 while (my $line = <DATA>){
+    chomp $line;
+    if ($line =~ /Nobody/i){
     $line =~ s/Nobody/$name/g;
-    print $line;
-}
+    say $line;
+    }
 
 __DATA__
+
+
 Nobody by Shel Silverstein
+
 Nobody loves me,
 Nobody cares,
 Nobody picks me peaches and pears.
@@ -37,3 +40,4 @@ But I found somebody each place that I looked.
 I searched till I'm tired, and now with the dawn,
 There's no doubt about it-
 Nobody's gone!
+
