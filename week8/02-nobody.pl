@@ -13,9 +13,6 @@ while (my $line = <DATA>){
 }
 
 __DATA__
-
-
-
 Nobody loves me,
 Nobody cares,
 Nobody picks me peaches and pears.
@@ -37,4 +34,3 @@ But I found somebody each place that I looked.
 I searched till I'm tired, and now with the dawn,
 There's no doubt about it-
 Nobody's gone!
-
