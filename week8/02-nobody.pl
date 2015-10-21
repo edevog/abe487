@@ -8,11 +8,9 @@ use feature "say";
 my $name = shift || "George";
 
 while (my $line = <DATA>){
-    chomp $line;
-    if ($line =~ /Nobody/i){
     $line =~ s/Nobody/$name/g;
-    say $line;
-    }
+    print $line;
+}
 
 __DATA__
 
