@@ -6,16 +6,21 @@ use strict;
 use autodie;
 use feature 'say';
 
-unless (@ARGV){
-    die "Please provide a FASTA file.\n";
-}
-my $header;
+my $input = shift || die "Please provide a FASTA file.\n";
 
-while (my $line = shift){
+open my $fh, '<', $input;
+
+my $count;
+while (my $line = <$fh>) {
     chomp $line;
-    if (substr($line,0,1) eq '>') {
-        $header = $line;
-
-say "$header";
+    if ($line =~ /^>(.+)/) {
+        $count++;
+        say "$count: $1";
     }
+}
+
+if ($count > 1){
+    say "Found $count sequences.";
+}else{
+    say "Found $count sequence.";
 }
