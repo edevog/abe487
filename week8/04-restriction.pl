@@ -10,7 +10,7 @@ use autodie;
 #Y is C or T
 #we want to math R^AATTY
 
-my $file = shift || die "Please provide and sequence or file.\n";
+my $file = shift || die "Please provide a sequence or file.\n";
 
 open my $fh, '<', $file;
 
