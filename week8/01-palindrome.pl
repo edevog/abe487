@@ -4,14 +4,13 @@ use strict;
 use warnings;
 use autodie;
 use feature "say";
-use Data::Dumper;
 
 unless (@ARGV){
     die "Please provide a word or phrase.\n";
 }
 
 my $input = lc(shift);
-$input =~ s/[..., ]//g;
+$input =~ s/[^A-Za-z0-9]//g;
 my $rev_input = reverse $input;
 
 

@@ -18,3 +18,9 @@ while (my $line = <$fh>) {
         say "$count: $1";
     }
 }
+
+if ($count > 1){
+    say "Found $count sequences.";
+}else{
+    say "Found $count sequence.";
+}
