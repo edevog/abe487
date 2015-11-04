@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use autodie;
-use Bio::DB::Fasta'get_all_primary_ids';
+use Bio::DB::Fasta 'get_all_primary_ids';
 use Bio::SeqIO;
 use feature 'say';
 use Getopt::Long;
