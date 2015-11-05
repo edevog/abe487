@@ -23,21 +23,9 @@ for my $file (@ARGV) {
     my $in = Bio::SeqIO->new(-file   => $file,
                              -format => 'Genbank');
 
-#    while (my $seq = $in->next_seq){
-#        for my $feat_object ($seq->get_SeqFeatures) {          
-#           print "primary tag: ", $feat_object->primary_tag, "\n";          
-#           for my $tag ($feat_object->get_all_tags) {             
-#              print "  tag: ", $tag, "\n";             
-#              for my $value ($feat_object->get_tag_values($tag)) {                
-#                 print "    value: ", $value, "\n";             
-#              }          
-#           }       
-#        }
-#    }
 my $count = 0;
     while (my $seq = $in->next_seq){
         my @cds = grep { $_->primary_tag eq 'CDS' } $seq->top_SeqFeatures;
-        #say Dumper(\@cds); use Data::Dumper;
         $count++; 
         my $seq_id = $seq->id;
         my $ncds   = scalar @cds;

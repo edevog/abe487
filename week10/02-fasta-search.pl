@@ -1,38 +1,51 @@
 #!/usr/bin/env perl
-#02-fasta-search.pl
+
 use strict;
 use warnings;
 use autodie;
-use Bio::DB::Fasta 'get_all_primary_ids';
-use Bio::SeqIO;
 use feature 'say';
 use Getopt::Long;
 use Pod::Usage;
 
-my %opts = get_opts();
-my @args = @ARGV;
-
-if ($opts{'help'} || $opts{'man'}) {
-    pod2usage({
-        -exitval => 0,
-        -verbose => $opts{'man'} ? 2 : 1
-    });
-}
-
-say "OK";
+main();
 
 # --------------------------------------------------
-sub get_opts {
-    my %opts;
-    GetOptions(
-        \%opts,
-        'help',
-        'man',
-    ) or pod2usage(2);
+sub main {
+    my %args = get_args();
 
-    return %opts;
+    if ($args{'help'} || $args{'man_page'}) {
+        pod2usage({
+            -exitval => 0,
+            -verbose => $args{'man_page'} ? 2 : 1
+        });
+    }
+
+    if (scalar @ARGV != 2) {
+        pod2usage();
+    }
+
+    my ($file, $pattern) = @ARGV;
+    my $db = Bio::DB::Fasta->new($file);
+    my @ids =grep{/$pattern/} $db->get_all_primary_ids;
+
+    say "Found ",scalar(@ids) ," ids";
+
+    if (scalar(@ids) > 0) {
+       (my $filename = $pattern) =~ s/\W//g;
+           $filename .= '.fa';
+    
+        my $out_file = Bio::SeqIO->new(-file   => ">$filename" ,
+                                       -format => 'Fasta');
+
+        for my $id (@ids) {                                               
+            my $seq = $db->get_Seq_by_id($id);                                              $out_file->write_seq($seq);
+        }
+        say "See results in ", $filename;
+    }
 }
+say "OK";
 
+    
 __END__
 
 # --------------------------------------------------
@@ -41,12 +54,11 @@ __END__
 
 =head1 NAME
 
-02-fasta-search.pl - problem 2
+02-fasta-search.pl - a script
 
 =head1 SYNOPSIS
 
-Usage:
-      02-fasta-search.pl file.fa pattern
+  02-fasta-search.pl 
 
 Options:
 
@@ -55,7 +67,8 @@ Options:
 
 =head1 DESCRIPTION
 
-Retrieve all IDs from a FASTA file matching a given pattern using a regular expression match
+Describe what the script does, what input it expects, what output it
+creates, etc.
 
 =head1 SEE ALSO
 
