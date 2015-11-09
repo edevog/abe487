@@ -19,7 +19,7 @@ for my $file (@ARGV) {
         if ($ct >= 50) {
         $kegg{$k}++;
         }
-    opel my $variable_fh, '`dd
+    open my $variable_fh, 
     }
 }
 

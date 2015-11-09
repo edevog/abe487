@@ -5,8 +5,9 @@ use warnings;
 use autodie;
 use feature 'say';
 use Getopt::Long;
+use Bio::DB::Fasta;
 use Pod::Usage;
-
+use Bio::SeqIO;
 main();
 
 # --------------------------------------------------
@@ -44,6 +45,18 @@ sub main {
     }
 }
 say "OK";
+
+# --------------------------------------------------
+sub get_args {
+    my %opts;
+    GetOptions(
+        \%opts,
+        'help',
+        'man',
+    ) or pod2usage(2);
+
+    return %opts;
+}
 
     
 __END__
